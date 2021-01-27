@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/style.css" type="text/css"/>
+  </head>
+
+  </head>
+  <body>
+    <!--Navigation-->
+    <nav>
+      <div><a class="navText" href="#contact">Contact</a></div>
+      <div><a class="navText" href="#projects">Projects</a></div>
+      <div>
+        <a
+          class="navText"
+          href="https://github.com/liampalmer0"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><img
+            id="githubMark"
+            src="/assets/img/GitHub-Mark-64px.png"
+            alt="GitHub Link"
+        /></a>
+      </div>
+    </nav>
+    <main role="main">
+      {{ content }}
+    </main>
+    <footer>&copy; Liam Palmer 2021</footer>
+  </body>
+</html>

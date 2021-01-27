@@ -1,0 +1,237 @@
+---
+---
+
+@font-face {
+  font-family: IBM Plex Sans;
+  font-weight: regular;
+  src: url("/assets/IBM_Plex_Sans/IBMPlexSans-Regular.ttf");
+}
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #fffbfb;
+  color: #161616;
+  width: 100%;
+  margin: 0 auto;
+  font-family: "IBM Plex Sans", Helvetica, sans-serif;
+  /* font-family: Helvetica, Arial, sans-serif; */
+}
+
+/* Library =================================================== */
+.bg-28 {
+  background-color: #282828;
+}
+.bg-58 {
+  background-color: #585858;
+}
+.bg-grey {
+  /* background-color: #d0d5da; */
+  background-color: #e0e0e0;
+}
+.rounded {
+  border-radius: 8px;
+}
+
+/* Navigation ================================================ */
+nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: mistyrose;
+}
+nav a:hover {
+  background-color: #fffbfb;
+}
+nav a {
+  color: #353535;
+  padding: 0.5em;
+  text-decoration: none;
+  font-size: 1em;
+}
+nav div {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#githubMark {
+  height: 1.3em;
+  width: auto;
+}
+
+/* Layout ==================================================== */
+.grid {
+  display: grid;
+}
+.headerText {
+  font-size: 4.5em;
+  font-weight: lighter;
+}
+.subheaderText {
+  font-size: 2em;
+  font-weight: lighter;
+}
+h2 {
+  font-size: 3.5em;
+  text-align: center;
+}
+/* Hero ====================================================== */
+.hero {
+  background-color: mistyrose;
+  min-height: 90vh;
+}
+.heroHeading {
+  display: flex;
+  align-items: center;
+  padding: 0.7em 2em;
+}
+.heroDesc {
+  padding: 0em 2em;
+}
+.heroHeading .headerText,
+.heroDesc .subheaderText {
+  line-height: 1.2em;
+}
+
+/* Projects ================================================== */
+#projects {
+  background-color: #fffbfb;
+}
+.projectList {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+.projectTile {
+  padding: 1em;
+  border: 1px black solid;
+}
+.projectTile img {
+  max-width: 100%;
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  transition: opacity 0.5s;
+  transition-timing-function: ease-out;
+}
+.projectTile img:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.techList {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  padding: 0em 0em 1em 0em;
+  list-style-type: none;
+}
+.techList li {
+  padding-right: 1em;
+}
+
+/* Contact =================================================== */
+#contact {
+  min-height: 100vh;
+}
+.contactDesc {
+  /* line-height: 5em; */
+  width: 50%;
+  margin: auto;
+  padding: 1.4em;
+  background-color: rgb(255, 227, 166);
+  /* box-shadow: 7px 10px 30px rgba(0,0,0,0.3); */
+  box-shadow: 25px 25px 0px white;
+}
+.contactDesc div { 
+  background-color: white;
+  border: black solid 2px;
+  box-shadow: 7px 10px 30px rgba(0,0,0,0.1);
+  margin: 1.5em 0em;
+}
+.contactDesc h3 { 
+  margin: 0em;
+  border-bottom: black solid 2px;
+  /* line-height: 1em; */
+  padding: 1em;
+  
+  text-align: center;
+  
+  
+}
+.contactDesc p { 
+  margin:0em;
+  /* line-height: 1em; */
+  padding: 1em;
+  /* text-align: center; */
+  
+  /* box-shadow: 7px 10px 30px rgba(0,0,0,0.1); */
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  /* Layout ======================================================= */
+  .heroDesc {
+    width: 70%;
+  }
+  .headerText {
+    font-size: 5em;
+    font-weight: lighter;
+  }
+  .subheaderText {
+    font-size: 2em;
+  }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  /* Layout ======================================================= */
+  .headerText {
+    font-size: 6em;
+    font-weight: lighter;
+  }
+  .navText {
+    font-size: 1.5em;
+  }
+  .projectList {
+    padding: 1em 2em;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .hero {
+    padding-bottom: 2em;
+  }
+  .heroHeading {
+    margin: 1em 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: lightcoral; */
+    /* box-shadow: 7px 10px 30px rgba(0,0,0,0.3); */
+  }
+  .heroDesc {
+    width: 60%;
+    margin: auto;
+    padding: 1.4em;
+    background-color: rgb(255, 227, 166);
+    /* box-shadow: 7px 10px 30px rgba(0,0,0,0.3); */
+    box-shadow: 25px 25px 0px white;
+  }
+  .twoCol {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
