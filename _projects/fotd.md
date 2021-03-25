@@ -11,4 +11,4 @@ alt: Screenshot of Fit of the Day's outfit recommendation dashboard
 desc: A configurable outfit recommendation web app
 ---
 
-Roach adventure is a browser based Javascript game. It uses the JS library PHASER3.js
+A configurable outfit recommendation web app
