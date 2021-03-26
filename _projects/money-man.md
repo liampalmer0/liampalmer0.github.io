@@ -1,8 +1,10 @@
 ---
 layout: project
 title: Money Man
+lang: JavaScript
+index: 3
+repo: https://github.com/liampalmer0/MoneyMan
 techs: 
-  - JavaScript
   - Electron
   - React
 img: moneyMan.png

@@ -1,13 +1,15 @@
 ---
 layout: project
-title: Deutsche Welle to Anki 
+title: DW to Anki 
+lang: Python
+index: 2
+repo: https://github.com/liampalmer0/dw-anki-soup
 techs:
-  - Python
   - BeautifulSoup4
   - Click
-img: fotd.png
+img: dw-anki.png
 alt: Screenshot of the project's home screen
-desc: Python CLI application that adds DW German course vocab to Anki
+desc: Python CLI app that adds Deutsche Welle German course vocab to Anki
 ---
 
 Python CLI application that adds DW German course vocab to Anki

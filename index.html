@@ -7,16 +7,15 @@ title: Liam Palmer - Hi
 <div class="hero">
   <!-- Header -->
   <div class="hero-heading">
-    <div>
-      <h1 class="header-text">
-        <span class="greeting"> Hi </span> <br />
-        I'm Liam
-      </h1>
-    </div>
+    <h1 class="header-text">Hi, I'm Liam</h1>
   </div>
   <div class="hero-desc">
-    <p class="subheader-text">I'm a recent graduate & JavaScript developer.</p>
-    <p class="subheader-text"><u>please consider hiring me</u> :)</p>
+    <p class="subheader-text">
+      I'm a student, web developer, and coding enthusiast
+    </p>
+  </div>
+  <div class="go">
+    <span><a href="#projects">See my work</a></span>
   </div>
 </div>
 
@@ -27,16 +26,18 @@ title: Liam Palmer - Hi
   <div class="project-list">
     {% for proj in site.projects %}
     <div class="project">
-      <h4>
-        <h4 class="title">{{ proj.title }}</h4>
-        <!-- <a href="{{ proj.url }}"> {{ proj.name }} </a> -->
-      </h4>
-      <img src={{ "/assets/img/projects/" | append: proj.img }} alt="{{ proj.alt }}" />
-      <div class="desc">{{proj.desc}}</div>
-      <div class="tech-list">
-        {% for tech in proj.techs %}
-        <div class="tech chip">{{ tech }}</div>
-        {% endfor %}
+      <img src={{ "/assets/img/projects/" | append: proj.img }} alt="{{ proj.alt
+      }}" />
+      <div class="card-body">
+        <h3 class="title">{{ proj.title }}</h3>
+        <div class="desc">
+          <span class="lang">{{ proj.lang }}</span>
+          {{proj.desc}}
+        </div>
+        <div class="actions">
+          <a href="{{ proj.url }}">DETAILS</a>
+          <a href="{{ proj.repo }}">REPO</a>
+        </div>
       </div>
     </div>
     {% endfor %}
@@ -45,11 +46,11 @@ title: Liam Palmer - Hi
 
 <!--Contact-->
 <section class="contact" id="contact">
-  <h2 class="header-text">Contact Me</h2>
+  <h2 class="header-text">Where to Find Me</h2>
   <div class="contact-desc">
     <div>
       <h3>GitHub:</h3>
-      <p>github.com/liampalmer0</p>
+      <p><a href="https://github.com/liampalmer0">github.com/liampalmer0</a></p>
     </div>
     <div>
       <h3>HackerRank:</h3>

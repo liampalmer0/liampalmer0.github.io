@@ -1,6 +1,9 @@
 ---
 layout: project
 title: Fit of the Day
+lang: JavaScript
+index: 1
+repo: https://github.com/liampalmer0/fit-of-the-day
 techs:
   - Node
   - Express

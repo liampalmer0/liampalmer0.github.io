@@ -1,8 +1,9 @@
 ---
 layout: project
 title: Roach Adventure
+lang: JavaScript
+index: 4
 techs:
-  - JavaScript
   - Phaser 3
 img: roachAdv.png
 alt: Screenshot of a 2D game called Roach Adventure
