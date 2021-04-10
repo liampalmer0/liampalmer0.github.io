@@ -14,14 +14,14 @@
   --space-50: #efecff;
   --rose: #f9e8f1;
   --tangerine: #f0c2b7;
-  
+
   // current color scheme
   --paradise: #ef476f;
   --paradise-dark: #b8304f;
   --orange-yellow: #ffc43d;
   --blue: #1b9aaa;
   --carib-green: #06d6a0;
-  
+
   --main-fg: black;
   --main-bg: white;
   --primary: var(--paradise);
@@ -41,7 +41,24 @@
 }
 body {
   font-size: 1rem;
-  background-color: var(--main-bg);
+  // dotted background
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 1) 48%,
+      rgba(40, 40, 40, 1) 48%,
+      rgba(40, 40, 40, 1) 52%,
+      rgba(255, 255, 255, 1) 52%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 1) 48%,
+      rgba(40, 40, 40, 1) 48%,
+      rgba(40, 40, 40, 1) 52%,
+      rgba(255, 255, 255, 1) 52%
+    );
+  background-blend-mode: screen;
+  background-size: 50px 50px;
+  background-position: 0 -25px;
   color: #161616;
   width: 100%;
   margin: 0 auto;
@@ -63,6 +80,7 @@ nav {
   padding: 0.65rem 0;
   min-height: 10vh;
   width: 100%;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 nav a {
   border-radius: 2rem;
@@ -78,7 +96,6 @@ nav a:hover {
   background-color: var(--main-bg);
   color: var(--primary-dark);
   transition: background-color 0.1s ease-in;
-  box-shadow: rgba(0, 0, 0, 0.1);
 }
 nav div {
   text-align: center;
@@ -119,6 +136,7 @@ h2.header-text {
   justify-content: center;
 }
 .hero-heading h1 {
+  background-color: var(--main-bg);
   margin: auto 0;
 }
 .hero-desc {
@@ -132,20 +150,28 @@ h2.header-text {
 }
 .hero .go {
   flex: 0 2;
-  font-size: 1.2rem;
 }
 .hero .go span a {
   border: solid 1px black;
   padding: 0.5rem 1rem;
   margin: 1rem;
+  font-size: 1.5rem;
   text-decoration: none;
   color: inherit;
+  background-color: var(--main-bg);
+  box-shadow: 0px 0 2px rgba(0, 0, 0, 0.2);
+}
+.hero .go span a:hover {
+  box-shadow: 0px 0 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Projects ================================================== */
 .projects {
-  background-color: var(--secondary);
+  background-color: transparent;
   color: var(--main-fg);
+}
+.projects h2.header-text {
+  background-color: var(--main-bg);
 }
 .project-list {
   display: grid;
@@ -163,6 +189,7 @@ h2.header-text {
   background-color: var(--main-bg);
   color: var(--main-fg);
   transition: transform 0.4s;
+  box-shadow: 0px 0 2px rgba(0, 0, 0, 0.2);
 }
 .project * {
   z-index: 1;
@@ -175,7 +202,7 @@ h2.header-text {
   right: 0;
   bottom: 0;
   opacity: 0;
-  box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0 8px rgba(0, 0, 0, 0.2);
   transition: opacity 0.4s;
 }
 .project .card-body {
@@ -197,7 +224,6 @@ h2.header-text {
 }
 .project .lang {
   display: block;
-  font-variant: small-caps;
   width: 100%;
   margin-bottom: 0.5rem;
   color: #777777;
