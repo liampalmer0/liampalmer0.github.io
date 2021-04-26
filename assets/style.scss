@@ -2,44 +2,36 @@
 ---
 
 :root {
-  // Original color scheme
-  --red-900: #490a00;
-  --red-100: mistyrose;
-  --yellow: rgb(255, 227, 166);
-
-  // color scheme v2
+  // color scheme
+  --main-fg: black;
+  --main-bg: white;
+  --main-bg-alt: white;
+  --main-fg-alt: #777777;
   --space-900: #2b2d42;
   --space-700: #505370;
   --space-500: #616796;
   --space-100: #d1d5eb;
   --space-50: #efecff;
-  --rose: #f9e8f1;
-  --tangerine: #f0c2b7;
+  
+  --primary: var(--space-900);
+  --on-primary: var(--main-bg);
+  --primary-alt: var(--space-700);
+  --on-primary-alt: var(--main-bg);
+  
+  --secondary: var(--space-500);
+  --secondary-alt: var(--space-700);
+  --on-secondary: var(--main-bg);
+  
+  --accent: var(--space-500);
+  --accent-alt: var(--space-50);
+  --on-accent: var(--space-900);
 
-  // current color scheme
+  // alt color scheme
   --paradise: #ef476f;
   --paradise-dark: #b8304f;
   --orange-yellow: #ffc43d;
   --blue: #1b9aaa;
   --carib-green: #06d6a0;
-
-  --main-fg: black;
-  --main-bg: white;
-  --main-bg-alt: white;
-  --main-fg-alt: #777777;
-
-  --primary: var(--space-900);
-  --on-primary: var(--main-bg);
-  --primary-alt: var(--space-700);
-  --on-primary-alt: var(--main-bg);
-
-  --secondary: var(--space-500);
-  --secondary-alt: var(--space-700);
-  --on-secondary: var(--main-bg);
-
-  --accent: var(--space-500);
-  --accent-alt: var(--space-50);
-  --on-accent: var(--space-900);
 }
 
 @font-face {
@@ -142,7 +134,7 @@ h2.header-text {
   justify-content: space-evenly;
   align-items: center;
   color: var(--main-fg);
-  min-height: 90vh;
+  min-height: 100vh;
   margin: 0 1rem;
 }
 .hero-heading {
@@ -322,7 +314,6 @@ h2.header-text {
   justify-content: space-around;
   align-items: center;
   max-width: 100%;
-  min-width: 50%;
   min-height: 40vh;
   margin: 1rem;
   padding: 1.4em;
@@ -356,7 +347,7 @@ h2.header-text {
 }
 .contact-desc div {
   color: var(--main-fg);
-  margin: 1.5rem;
+  margin: 1rem 3rem;
   text-align: center;
 }
 .contact-desc > div span {
@@ -365,6 +356,10 @@ h2.header-text {
 .contact-desc a {
   color: var(--main-fg);
   text-decoration: none;
+}
+.contact-desc a img {
+  height: 64px;
+  width: 64px;
 }
 footer {
   margin: auto 0 0 0;

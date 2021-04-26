@@ -11,4 +11,4 @@ alt: A screenshot of the portfolio website. The main heading reads "Hi, I'm Liam
 desc: My portfolio site (where you are right now)
 ---
 
-My online showcase of my work so far.
+An online showcase of my notable work so far.
