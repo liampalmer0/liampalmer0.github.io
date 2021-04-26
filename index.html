@@ -11,11 +11,12 @@ title: Liam Palmer - Hi
   </div>
   <div class="hero-desc">
     <p class="subheader-text">
-      I'm a student, web developer, and coding enthusiast
+      I'm a recent graduate, <span>web developer,</span>
+      <span>and coding enthusiast </span>
     </p>
-  </div>
-  <div class="go">
-    <span><a href="#projects">See my work</a></span>
+    <div class="go">
+      <a href="#projects">See my work</a>
+    </div>
   </div>
 </div>
 
@@ -26,7 +27,13 @@ title: Liam Palmer - Hi
   <div class="project-list">
     {% for proj in site.projects %}
     <div class="project-card">
-      <img src={{ "/assets/img/projects/" | append: proj.img }} alt=""/>
+      <!-- prettier-ignore -->
+      {% if proj.title == "DW to Anki"%} 
+        {% assign img-class = "anki" %} 
+      {% else %}
+        {% assign img-class = "" %} 
+      {% endif %} 
+      <img class="{{img-class}}" src={{ "/assets/img/projects/" | append: proj.img }} alt="" />
       <div class="card-body">
         <h3 class="title">{{ proj.title }}</h3>
         <div class="desc">
@@ -48,16 +55,22 @@ title: Liam Palmer - Hi
   <h2 class="header-text">Where to Find Me</h2>
   <div class="contact-desc">
     <div>
-      <h3>GitHub:</h3>
-      <p><a href="https://github.com/liampalmer0">github.com/liampalmer0</a></p>
+      <a href="https://github.com/liampalmer0">
+        <img src="/assets/img/GitHub-Mark-64px.png" alt="" />
+        <span>Github</span>
+      </a>
     </div>
     <div>
-      <h3>HackerRank:</h3>
-      <p>www.hackerrank.com/palmerlr</p>
+      <a href="https://www.hackerrank.com/palmerlr">
+        <img src="/assets/img/GitHub-Mark-64px.png" alt="" />
+        <span>HackerRank</span>
+      </a>
     </div>
     <div>
-      <h3>LinkedIn:</h3>
-      <p>linkedIn...</p>
+      <a href="https://www.hackerrank.com/palmerlr">
+        <img src="/assets/img/GitHub-Mark-64px.png" alt="" />
+        <span>LinkedIn</span>
+      </a>
     </div>
   </div>
 </section>

@@ -10,6 +10,7 @@
   // color scheme v2
   --space-900: #2b2d42;
   --space-700: #505370;
+  --space-500: #616796;
   --space-100: #d1d5eb;
   --space-50: #efecff;
   --rose: #f9e8f1;
@@ -24,12 +25,23 @@
 
   --main-fg: black;
   --main-bg: white;
-  --primary: var(--paradise);
-  --primary-dark: var(--paradise-dark);
-  --secondary: var(--orange-yellow);
-  --tertiary: var(--blue);
-  --accent: var(--carib-green);
+  --main-bg-alt: white;
+  --main-fg-alt: #777777;
+
+  --primary: var(--space-900);
+  --on-primary: var(--main-bg);
+  --primary-alt: var(--space-700);
+  --on-primary-alt: var(--main-bg);
+
+  --secondary: var(--space-500);
+  --secondary-alt: var(--space-700);
+  --on-secondary: var(--main-bg);
+
+  --accent: var(--space-500);
+  --accent-alt: var(--space-50);
+  --on-accent: var(--space-900);
 }
+
 @font-face {
   font-family: IBM Plex Sans;
   font-weight: regular;
@@ -40,26 +52,28 @@
   scroll-behavior: smooth;
 }
 body {
+  --dot: var(--main-bg);
+  --dot-alt: var(--main-fg);
   font-size: 1rem;
   // dotted background
   background: linear-gradient(
       0deg,
-      rgba(255, 255, 255, 1) 48%,
-      rgba(40, 40, 40, 1) 48%,
-      rgba(40, 40, 40, 1) 52%,
-      rgba(255, 255, 255, 1) 52%
+      var(--dot) 48%,
+      var(--dot-alt) 48%,
+      var(--dot-alt) 52%,
+      var(--dot) 52%
     ),
     linear-gradient(
       90deg,
-      rgba(255, 255, 255, 1) 48%,
-      rgba(40, 40, 40, 1) 48%,
-      rgba(40, 40, 40, 1) 52%,
-      rgba(255, 255, 255, 1) 52%
+      var(--dot) 48%,
+      var(--dot-alt) 48%,
+      var(--dot-alt) 52%,
+      var(--dot) 52%
     );
   background-blend-mode: screen;
   background-size: 50px 50px;
   background-position: 0 -25px;
-  color: #161616;
+  color: var(--main-fg);
   width: 100%;
   margin: 0 auto;
   height: 100vh;
@@ -76,7 +90,7 @@ body {
 /* Navigation ================================================ */
 nav {
   background-color: var(--primary);
-  color: var(--main-bg);
+  color: var(--on-primary);
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
@@ -96,7 +110,7 @@ nav div:last-child a:hover {
 }
 nav a:hover {
   background-color: var(--main-bg);
-  color: var(--primary-dark);
+  color: var(--primary-alt);
   transition: background-color 0.1s ease-in;
 }
 nav div {
@@ -143,37 +157,62 @@ h2.header-text {
 }
 .hero-desc {
   flex: 0 2;
-  background-color: var(--primary);
-  color: var(--main-bg);
-  padding: 0em 1rem;
+  background-color: var(--secondary);
+  color: var(--on-secondary);
+  padding: 0.25rem 1rem;
   margin: 0 1rem 0 0;
   font-size: 1.5rem;
-  box-shadow: 1rem 1rem 0 var(--primary-dark);
+  box-shadow: 1rem 1rem 0 var(--secondary-alt);
+}
+.subheader-text span {
+  display: inline-block;
 }
 .hero .go {
   flex: 0 2;
+  padding: 1rem 1rem 1.5rem 1rem;
+  text-align: center;
 }
-.hero .go span a {
-  border: solid 1px black;
+.hero .go a {
+  position: relative;
+  border: solid 1px var(--on-primary);
   padding: 0.5rem 1rem;
-  margin: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   text-decoration: none;
   color: inherit;
-  background-color: var(--main-bg);
-  box-shadow: 0px 0 2px rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  &:before {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: opacity 0.2s linear;
+    background-image: linear-gradient(
+        25deg,
+        rgba(93, 209, 224, 0.494) 0%,
+        transparent 60%
+      ),
+      linear-gradient(145deg, rgba(255, 235, 124, 0.475) 0%, transparent 70%),
+      linear-gradient(265deg, rgba(245, 132, 132, 0.475) 0%, transparent 90%);
+  }
 }
-.hero .go span a:hover {
-  box-shadow: 0px 0 4px rgba(0, 0, 0, 0.2);
+
+.hero .go a:hover::before {
+  opacity: 50%;
 }
 
 /* Projects ================================================== */
 .projects {
   background-color: transparent;
   color: var(--main-fg);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
 }
 .projects h2.header-text {
-  font-size: 2.5rem;
   background-color: var(--main-bg);
 }
 .project-list {
@@ -189,9 +228,9 @@ h2.header-text {
   flex-flow: column nowrap;
   justify-content: space-between;
   position: relative;
-  background-color: var(--main-bg);
+  background-color: var(--main-bg-alt);
   color: var(--main-fg);
-  transition: transform 0.4s;
+  transition: transform 0.2s;
   box-shadow: 0px 0 2px rgba(0, 0, 0, 0.2);
 }
 .project-card * {
@@ -206,7 +245,7 @@ h2.header-text {
   bottom: 0;
   opacity: 0;
   box-shadow: 0px 0 8px rgba(0, 0, 0, 0.2);
-  transition: opacity 0.4s;
+  transition: opacity 0.2s;
 }
 .project-card .card-body {
   flex: 1;
@@ -229,15 +268,17 @@ h2.header-text {
   display: block;
   width: 100%;
   margin-bottom: 0.5rem;
-  color: #777777;
+  color: var(--main-fg-alt);
 }
 .project-card img {
   max-width: 100%;
   height: 250px;
   width: 100%;
   object-fit: cover;
-  transition: opacity 0.5s;
-  transition-timing-function: ease-out;
+  object-position: top 50%;
+}
+.project-card img.anki {
+  object-position: left top;
 }
 .project-card .actions {
   flex: 1;
@@ -249,7 +290,8 @@ h2.header-text {
 }
 .actions > a {
   text-decoration: none;
-  color: var(--primary-dark);
+  color: var(--accent);
+  font-weight: bold;
   font-size: 1rem;
   padding: 0.5rem 0.75rem;
   border-radius: 0.1rem;
@@ -257,42 +299,77 @@ h2.header-text {
   transition: background-color 0.2s;
 }
 .actions > a:hover {
-  background-color: var(--rose);
+  color: var(--on-accent);
+  background-color: var(--accent-alt);
 }
 
 /* Contact =================================================== */
 .contact {
-  background-color: var(--tertiary);
-  color: var(--main-bg);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: transparent;
+  color: var(--primary);
   min-height: 100vh;
 }
+.contact h2.header-text {
+  background-color: white;
+}
 .contact-desc {
-  width: 50%;
-  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 100%;
+  min-width: 50%;
+  min-height: 40vh;
+  margin: 1rem;
   padding: 1.4em;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   background-color: var(--main-bg);
-  color: var(--main-fg);
+  background-image: linear-gradient(
+      25deg,
+      rgba(93, 209, 224, 0.494) 0%,
+      transparent 60%
+    ),
+    linear-gradient(145deg, rgba(255, 235, 124, 0.475) 0%, transparent 70%),
+    linear-gradient(265deg, rgba(245, 132, 132, 0.475) 0%, transparent 90%);
+  animation: 10s flow linear infinite;
+}
+@keyframes flow {
+  0% {
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+  25% {
+    transform: rotate3d(0, 1, 0, 5deg);
+  }
+  50% {
+    transform: rotate3d(0, 1, 0, 0deg) scale(1.0025, 1.0025);
+  }
+  75% {
+    transform: rotate3d(0, 1, 0, -5deg);
+  }
+  100% {
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
 }
 .contact-desc div {
-  // background-color: var(--main-fg);
   color: var(--main-fg);
-  // box-shadow: 7px 10px 30px rgba(0, 0, 0, 0.1);
-  margin: 1.5em 0em;
+  margin: 1.5rem;
+  text-align: center;
 }
-.contact-desc h3 {
-  margin: 0em;
-  // border-bottom: black solid 2px;
-  padding: 1em;
-  text-align: left;
+.contact-desc > div span {
+  display: block;
 }
-.contact-desc p {
-  margin: 0em;
-  padding: 1em;
+.contact-desc a {
+  color: var(--main-fg);
+  text-decoration: none;
 }
 footer {
   margin: auto 0 0 0;
   background-color: var(--primary);
-  color: var(--main-bg);
+  color: var(--on-primary);
   padding: 1rem 1rem;
 }
 
@@ -337,7 +414,7 @@ footer {
   transition: color 0.2s;
 }
 .proj-pg .header a:hover {
-  color: var(--primary-dark);
+  color: var(--primary-alt);
 }
 .proj-pg .header a img {
   height: 1.1rem;
@@ -362,7 +439,7 @@ footer {
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   h2.header-text {
-    font-size: 4rem;
+    font-size: 3rem;
   }
   .hero-heading {
     font-size: 3rem;
