@@ -13,4 +13,4 @@ alt: Screenshot of a terminal interface with the text 'DW Anki. Interactive Mode
 desc: Python CLI app that adds Deutsche Welle German course vocab to Anki
 ---
 
-Python CLI application that adds DW German course vocab to Anki.
+Python CLI application that adds Deutsche Welle German course vocab to Anki.
