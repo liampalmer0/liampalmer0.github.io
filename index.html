@@ -10,10 +10,21 @@ title: Liam Palmer - Hi
     <h1 class="header-text">Hi, I'm Liam</h1>
   </div>
   <div class="hero-desc">
-    <p class="subheader-text">
-      I'm a recent graduate, <span>web developer,</span>
-      <span>and coding enthusiast </span>
-    </p>
+    <div class="subheader-text">
+      <div class="text-scroller">
+        <span>I'm a&nbsp;</span>
+        <div class="noun-list">
+          <span>web developer</span>
+          <span>recent graduate</span>
+        </div>
+      </div>
+      <div class="mobile-subheader">
+        <span>I'm a</span>
+        <span>recent graduate,</span>
+        <span>web developer,</span>
+        <span>and coding enthusiast</span>
+      </div>
+    </div>
     <div class="go">
       <a href="#projects">See my work</a>
     </div>
@@ -25,7 +36,8 @@ title: Liam Palmer - Hi
 <section class="projects" id="projects">
   <h2 class="header-text">Projects</h2>
   <div class="project-list">
-    {% assign sorted_projects = site.projects | sort: "index" %}
+    <!-- prettier-ignore -->
+    {% assign sorted_projects = site.projects | sort: "index" %} 
     {% for proj in sorted_projects %}
     <div class="project-card">
       <!-- prettier-ignore -->
@@ -75,3 +87,4 @@ title: Liam Palmer - Hi
     </div>
   </div>
 </section>
+<script src="/assets/js/text-scroller.js"></script>

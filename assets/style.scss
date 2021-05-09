@@ -149,15 +149,21 @@ h2.header-text {
 }
 .hero-desc {
   flex: 0 2;
+  width: 100%;
   background-color: var(--secondary);
   color: var(--on-secondary);
   padding: 0.25rem 1rem;
   margin: 0 1rem 0 0;
   font-size: 1.5rem;
   box-shadow: 1rem 1rem 0 var(--secondary-alt);
+  text-align: center;
 }
-.subheader-text span {
-  display: inline-block;
+.mobile-subheader {
+  display: block;
+  padding: 0.5rem 0.25rem;
+}
+.text-scroller {
+  display: none;
 }
 .hero .go {
   flex: 0 2;
@@ -418,6 +424,43 @@ footer {
   h2.header-text {
     font-size: 3rem;
   }
+  .mobile-subheader {
+    display: none;
+  }
+  .text-scroller {
+    display: flex;
+    flex-flow: row nowrap;
+    transform: translateX(8%);
+    background-color: var(--main-bg);
+  }
+  .hero-desc {
+    background-color: transparent;
+    color: var(--main-fg);
+    font-size: 2rem;
+    box-shadow: none;
+  }
+  .slide-up {
+    transform: translateY(-100%);
+    transition: transform 1s;
+    transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  }
+  .subheader-text {
+    display: flex;
+    justify-content: center;
+    flex-flow: row nowrap;
+    height: 2.5rem;
+    overflow-y: hidden;
+    position: relative;
+  }
+  .subheader-text .noun-list span {
+    display: block;
+    height: 2.5rem;
+    text-align: left;
+  }
+  .hero .go a {
+    background-color: var(--main-bg);
+    border-color: var(--main-fg);
+  }
 }
 
 /* // Medium devices (tablets, 768px and up) */
@@ -445,9 +488,6 @@ footer {
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .hero-heading {
-    font-size: 3.5rem;
-  }
   .project-card:hover {
     transform: translateY(-2px);
   }
@@ -463,6 +503,9 @@ footer {
 
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+  .hero-heading {
+    font-size: 3.5rem;
+  }
   .project-list {
     grid-template-columns: repeat(3, 1fr);
   }
