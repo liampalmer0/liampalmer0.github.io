@@ -73,10 +73,10 @@ body {
   flex-flow: column;
   font-family: "IBM Plex Sans", Helvetica, sans-serif;
 }
-
-/* Library =================================================== */
-.rounded {
-  border-radius: 8px;
+code {
+  background-color: var(--space-50);
+  border-radius: 0.25rem;
+  padding: 0.25rem;
 }
 
 /* Navigation ================================================ */

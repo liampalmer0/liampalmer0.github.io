@@ -25,7 +25,8 @@ title: Liam Palmer - Hi
 <section class="projects" id="projects">
   <h2 class="header-text">Projects</h2>
   <div class="project-list">
-    {% for proj in site.projects %}
+    {% assign sorted_projects = site.projects | sort: "index" %}
+    {% for proj in sorted_projects %}
     <div class="project-card">
       <!-- prettier-ignore -->
       {% if proj.title == "DW to Anki"%} 

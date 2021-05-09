@@ -24,23 +24,16 @@ defaults:
       image: true
       
 title: liampalmer0.github.io
-email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Liam Palmer software development project portfolio. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-#twitter_username: jekyllrb
 github_username:  liampalmer0
 
 collections:
   projects:
     output: true
-    sort_by: index
-
-# Build settings
-plugins:
-  - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
