@@ -14,6 +14,17 @@ alt: A screenshot of the Fit of the Day website. There are drawings of clothes f
 desc: A configurable outfit recommendation web app
 ---
 
-A configurable outfit recommendation web app. Uses local weather, calendar events and a list of clothes to generate outfits. 
+A configurable outfit recommendation web app. Uses local weather, calendar events and a list of clothes to generate outfits. FOTD is based loosely on the computerized closet from the 1995 movie *Clueless*. 
 
-This project was my undergraduate senior design project completed over 8 months in a team of three. My role was lead developer, architect, and project manager.
+The site was built with Node.js and the web framework Express.js. PostgreSQL was used for persistence and an ORM called Sequelize was used to interact with the data.
+
+Some of the final features included:
+* CRUD operations for clothing items
+* Outfit recommendations
+* Sign up/login using Passport.js
+* Fully functional built in calendar
+* Configurable weather display with geolocation support
+
+This project was my undergraduate senior design project and was completed over 8 months in a team of three. My role was lead/full stack developer, technical architect, and project manager.
+
+

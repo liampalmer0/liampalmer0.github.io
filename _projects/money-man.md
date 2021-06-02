@@ -12,7 +12,7 @@ alt: Screenshot of the Money Man Project (a spending planner)
 desc: A money management desktop app
 ---
 
-Money Man is a money management desktop app made with Electon and React.
+Money Man is a money management desktop app made with Electron and React.
 
 This project started out as a simple net income calculator for hourly workers and only used pure JavaScript and Electron. I decided to overhaul the project during the first few months of 2021 by switching to React and building out some more features.
 
