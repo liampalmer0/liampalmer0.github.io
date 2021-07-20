@@ -1,6 +1,6 @@
 const delay = 3000;
 const items = ["web developer", "recent graduate", "coding enthusiast"];
-const list = document.querySelector(".noun-list");
+const list = document.querySelector(".hero-noun-list");
 var index = 0;
 function onEnd() {
   list.classList.remove("slide-up");

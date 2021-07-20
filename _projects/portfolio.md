@@ -8,8 +8,12 @@ techs:
   - Jekyll
   - Liquid
   - SCSS
-img: port.png
-alt: A screenshot of the portfolio website. The main heading reads "Hi, I'm Liam"
+preview: port.png
+images:
+  - [
+      port.png,
+      "A screenshot of the portfolio website. The main heading reads 'Hi, I'm Liam'",
+    ]
 desc: My portfolio site (where you are right now)
 ---
 

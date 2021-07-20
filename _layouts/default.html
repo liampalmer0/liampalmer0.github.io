@@ -11,17 +11,18 @@
   </head>
   <body>
     <!--Navigation-->
-    <nav>
-      <div><a class="nav-link" href="/">Home</a></div>
-      <div><a class="nav-link" href="/#projects">Projects</a></div>
-      <div><a class="nav-link" href="/#contact">Contact</a></div>
+    <nav class="main-nav">
+      <div><a class="main-nav-link" href="/">Home</a></div>
+      <div><a class="main-nav-link" href="/#projects">Projects</a></div>
+      <div><a class="main-nav-link" href="/#contact">Contact</a></div>
       <div>
         <a
-          class="nav-link"
+          class="main-nav-image-link"
           href="https://github.com/liampalmer0"
           target="_blank"
           rel="noopener noreferrer"
           ><img
+            class="main-nav-image-link-img"
             id="github-mark"
             src="/assets/img/GitHub-Mark-Light-64px.png"
             alt="GitHub Link"
@@ -31,6 +32,6 @@
     <main role="main">
       {{ content }}
     </main>
-    <footer>&copy; Liam Palmer 2021</footer>
+    <footer class="main-footer">&copy; Liam Palmer 2021</footer>
   </body>
 </html>

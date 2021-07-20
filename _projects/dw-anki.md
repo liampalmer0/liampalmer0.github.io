@@ -8,8 +8,12 @@ techs:
   - BeautifulSoup4
   - genanki
   - Click
-img: dw-anki.png
-alt: Screenshot of a terminal interface with the text 'DW Anki. Interactive Mode. Review and choose which words to add. Acht, eight. Use this entry? Yes, no, edit.'
+preview: dw-anki.png
+images:
+  - [
+      dw-anki.png,
+      "Screenshot of a terminal interface with the text 'DW Anki. Interactive Mode. Review and choose which words to add. Acht, eight. Use this entry? Yes, no, edit.'",
+    ]
 desc: Python CLI app that adds Deutsche Welle German course vocab to Anki
 ---
 
