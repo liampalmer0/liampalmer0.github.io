@@ -342,7 +342,7 @@ p {
 .proj-carousel .slide {
   background-color: var(--main-bg-alt);
   max-width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .proj-carousel > .controls {
   align-items: center;
