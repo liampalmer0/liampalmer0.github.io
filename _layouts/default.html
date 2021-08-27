@@ -5,9 +5,7 @@
     <meta charset="UTF-8" />
     <title>Liam Palmer - {{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/assets/style.css" type="text/css"/>
-  </head>
-
+    <link rel="stylesheet" href="/assets/style.css" type="text/css" />
   </head>
   <body>
     <!--Navigation-->
@@ -21,17 +19,11 @@
           href="https://github.com/liampalmer0"
           target="_blank"
           rel="noopener noreferrer"
-          ><img
-            class="main-nav-image-link-img"
-            id="github-mark"
-            src="/assets/img/GitHub-Mark-Light-64px.png"
-            alt="GitHub Link"
-        /></a>
+          ><span class="sr-only">Liam Palmer on GitHub</span>
+        </a>
       </div>
     </nav>
-    <main role="main">
-      {{ content }}
-    </main>
+    <main role="main">{{ content }}</main>
     <footer class="main-footer">&copy; Liam Palmer 2021</footer>
   </body>
 </html>

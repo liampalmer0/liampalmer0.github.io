@@ -86,6 +86,14 @@ a {
 p {
   line-height: 2;
 }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+}
 .hero-heading-text,
 .subheading-text,
 .hero-subheading-text {
@@ -115,6 +123,7 @@ p {
 .main-nav-link {
   border-radius: 2rem;
   padding: 0.4rem 0.75rem;
+  display: inline-block;
   &:hover {
     background-color: var(--main-bg);
     color: var(--primary-alt);
@@ -122,20 +131,20 @@ p {
   }
 }
 .main-nav-image-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.main-nav-image-link-img {
-  height: 2rem;
-  width: auto;
+  display: block;
+  background-image: url("/assets/img/GitHub-Mark-Light-64px.png");
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 2rem;
 }
 
 /* Hero ====================================================== */
 .hero {
   color: var(--main-fg);
-  min-height: 100vh;
-  margin: 0 1rem;
+  min-height: 80vh;
+  margin: 0;
 }
 .hero-heading {
   flex: 0 2;
@@ -180,7 +189,7 @@ p {
     left: 0;
     right: 0;
     transition: opacity 0.12s linear;
-    background-color: rgba(255, 166, 0, 0.5);
+    background-color: rgba(141, 135, 124, 0.5);
   }
   &:hover::before {
     opacity: 50%;
@@ -192,7 +201,7 @@ p {
 
 /* Projects ================================================== */
 .subsection-block.projects {
-  background-color: var(--main-bg-alt);
+  background-color: var(--main-bg);
   color: var(--main-fg);
 }
 .project-card,
@@ -203,10 +212,11 @@ p {
 }
 .project-list {
   display: grid;
+  width: 90%;
   margin: 1rem 1.5rem 0rem 1.5rem;
   grid-template-columns: repeat(1, 1fr);
-  column-gap: 1.5rem;
-  row-gap: 1.5rem;
+  column-gap: 2rem;
+  row-gap: 2rem;
   padding-bottom: 3rem;
 }
 .project-card {
@@ -252,7 +262,7 @@ p {
   height: 250px;
   width: 100%;
   object-fit: cover;
-  object-position: top 50%;
+  object-position: 50% top;
 }
 .project-card-img.anki {
   object-position: left top;
@@ -282,16 +292,15 @@ p {
 
 /* Contact =================================================== */
 .subsection-block.contact {
-  background-color: var(--main-bg);
+  background-color: var(--main-bg-alt);
   color: var(--primary);
 }
 .contact-desc {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  align-items: center;
   max-width: 100%;
-  min-height: 40vh;
+  min-height: 30vh;
   margin: 1rem;
   padding: 1.4em;
 }
@@ -457,10 +466,10 @@ p {
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .hero-heading {
-    font-size: 3rem;
+    font-size: 2.75rem;
   }
   .main-nav-link {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
   .project-list {
     grid-template-columns: repeat(2, 1fr);
@@ -492,7 +501,7 @@ p {
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .hero-heading {
-    font-size: 3.5rem;
+    font-size: 3.25rem;
   }
   .project-list {
     grid-template-columns: repeat(3, 1fr);
