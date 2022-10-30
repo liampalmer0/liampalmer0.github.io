@@ -2,7 +2,7 @@
 layout: project
 title: Money Man
 lang: JavaScript
-index: 2
+index: 4
 repo: https://github.com/liampalmer0/MoneyMan
 techs:
   - Electron
