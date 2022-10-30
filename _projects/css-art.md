@@ -2,7 +2,7 @@
 layout: project
 title: CSS Art
 lang: CSS
-index: 4
+index: 2
 repo: https://github.com/liampalmer0/css-art
 # techs:
 preview: css-art/bike.png
