@@ -1497,11 +1497,12 @@ title: CSS Art Gallery
   }
 
   /* == B == */
+  .boss .letter:nth-child(3),
   .boss .letter:nth-child(1) {
     top: 7%;
     left: 8%;
   }
-
+  .boss .letter:nth-child(3)::after,
   .boss .letter:nth-child(1)::after {
     content: "";
     bottom: 5%;
@@ -1515,6 +1516,7 @@ title: CSS Art Gallery
     );
     border-radius: 0 80% 90% 0;
   }
+  .boss .letter:nth-child(3)::before,
   .boss .letter:nth-child(1)::before {
     content: "";
     border-radius: 60px;
@@ -1528,6 +1530,7 @@ title: CSS Art Gallery
       var(--letter-color) 0% 100%
     );
   }
+  .boss .letter:nth-child(3) > .detail,
   .boss .letter:nth-child(1) > .detail {
     top: 0;
     right: 70%;
@@ -1540,6 +1543,7 @@ title: CSS Art Gallery
     );
     border-radius: 100%/20%;
   }
+  .boss .letter:nth-child(3) > .detail::after,
   .boss .letter:nth-child(1) > .detail::after {
     content: "";
     top: 5%;
@@ -1553,6 +1557,7 @@ title: CSS Art Gallery
     );
     border-radius: 0 80% 90% 0;
   }
+  .boss .letter:nth-child(3) > .detail::before,
   .boss .letter:nth-child(1) > .detail::before {
     content: "";
     height: 75px;
@@ -1585,7 +1590,7 @@ title: CSS Art Gallery
     background-position: center;
   }
   /* == Sx2 == */
-  .boss .letter:nth-child(3),
+  /* .boss .letter:nth-child(3), */
   .boss .letter:nth-child(4) {
     width: 90px;
     top: 7%;
@@ -1621,7 +1626,7 @@ title: CSS Art Gallery
   .boss .letter:nth-child(4) {
     left: 75%;
   }
-  .boss .letter:nth-child(3)::after,
+  /* .boss .letter:nth-child(3)::after, */
   .boss .letter:nth-child(4)::after {
     content: "";
     height: 100%;
