@@ -1,0 +1,125 @@
+.project-container {
+  max-width: 100%;
+  margin: auto;
+  background-color: var(--main-bg);
+  .details {
+    flex: 1 1 100%;
+    padding: 0px 15px 80px;
+    a {
+      text-decoration: underline;
+      color: var(--accent);
+    }
+  }
+  .img-carousel {
+    flex: 1 1 100%;
+    position: relative;
+    overflow-x: hidden;
+    border-bottom: solid 1px rgba(17, 10, 8, 0.25);
+
+    .rail {
+      display: flex;
+      flex-direction: row;
+      left: -100%;
+      position: relative;
+      top: 0;
+      &.single {
+        left: 0%;
+      }
+    }
+    .rail.sliding {
+      transition: linear 0.2s left;
+    }
+    .slide {
+      background-color: var(--main-bg-alt);
+      max-width: 100%;
+      object-fit: contain;
+    }
+    .controls {
+      align-items: center;
+      display: flex;
+      flex-flow: row nowrap;
+      height: 100%;
+      justify-content: space-between;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+    .btn-left,
+    .btn-right {
+      background-color: var(--secondary-alpha);
+      border: none;
+      color: var(--main-bg);
+      font-size: 2rem;
+      min-height: 42px;
+      padding: 0;
+      width: 42px;
+      &:active {
+        color: var(--accent);
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .details {
+    .title {
+      width: 100%;
+      margin: 0;
+      font-size: 1.5rem;
+      flex: 1 1 50%;
+    }
+    .repo {
+      color: var(--main-fg);
+      flex: 1 0 0;
+      text-align: center;
+      font-size: 1rem;
+      transition: color 0.2s;
+      &:hover {
+        color: var(--primary-alt);
+      }
+    }
+    .project-header {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      margin: 1rem 0;
+    }
+    .gh-badge {
+      height: 24px;
+      width: 24px;
+    }
+    .tech {
+      border: solid black 1px;
+      border-left: 0px;
+      border-right: 0px;
+      text-align: center;
+      padding: 0.25rem;
+      font-size: 1rem;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .project-container {
+    width: 600px;
+    margin: 0.5rem auto;
+    padding: 0.5rem 1rem;
+    .img-carousel {
+      border-bottom: none;
+      box-shadow: 0px 1px 5px rgba(17, 10, 8, 0.25);
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .project-container {
+    width: 900px;
+    padding: 1rem 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .project-container {
+    width: 1000px;
+  }
+}
