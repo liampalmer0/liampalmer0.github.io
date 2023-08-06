@@ -1,0 +1,46 @@
+@use "sass:list";
+.subsection-block.contact {
+  color: var(--primary);
+}
+.contact-desc {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  max-width: 100%;
+  margin: 1rem;
+  padding: 1.4em;
+  gap: 30px;
+  .badge {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &.orange {
+      &:after {
+        height: 1em;
+      }
+      transform: rotate(5deg);
+      box-shadow: 2px 3px 2px rgba(150, 147, 130, 0.2);
+    }
+    &.pink {
+      &:after {
+        height: 10px;
+      }
+      transform: rotate(-3deg);
+      box-shadow: 2px 1px 2px rgba(150, 147, 130, 0.2);
+    }
+    &.green {
+      &:after {
+        height: 15px;
+      }
+      transform: rotate(3deg);
+      box-shadow: 1px 2px 2px rgba(150, 147, 130, 0.2);
+    }
+  }
+}
+.main-footer {
+  color: #aabfc7d5;
+  margin: auto 0 0 0;
+  background-color: var(--primary);
+  color: var(--on-primary);
+  padding: 1rem 1rem;
+}

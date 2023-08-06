@@ -1,0 +1,30 @@
+html {
+  background-color: #282828;
+  background-size: 200% 80%;
+  background-position: 50% 120%;
+  height: 69vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-found {
+  --fg: #ffebc7;
+  --error: rgb(235, 107, 107);
+  border: 1px solid var(--fg);
+  color: var(--fg);
+  font-size: 20px;
+  padding: 15px 20px;
+}
+.not-found h2 {
+  font-size: 20px;
+  margin: 0;
+  color: var(--error);
+}
+.not-found a {
+  font-weight: bold;
+  color: #ffff99;
+}
+
+/*# sourceMappingURL=notFound.css.map */

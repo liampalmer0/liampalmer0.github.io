@@ -1,0 +1,129 @@
+.hero {
+  color: var(--main-fg);
+  padding: 80px 15px 40px 15px;
+  margin: 0;
+}
+.hero-heading {
+  flex: 0 2;
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: center;
+}
+.hero-heading-text {
+  transform: rotate(1deg);
+  background-color: var(--yellow-note);
+  color: var(--note-fg-color);
+  padding: 15px 30px;
+  box-shadow: 2px 3px 2px rgba(150, 147, 130, 0.2);
+  font-weight: 500;
+  margin: auto 0;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    height: var(--tape-width);
+    width: calc(var(--tape-width) * 2.2);
+    background-color: var(--tape-color);
+    transform: rotate(-34deg);
+    left: calc(var(--tape-width) * -1 + 10px);
+    top: -19px;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    height: var(--tape-width);
+    width: calc(var(--tape-width) * 2);
+    background-color: var(--tape-color);
+    transform: rotate(-45deg);
+    right: calc(var(--tape-width) * -1 + 10px);
+    bottom: -27px;
+  }
+}
+.hero-desc {
+  flex: 0 2;
+  width: 100%;
+  color: var(--main-fg);
+  padding: 0.25rem 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.hero-caption-text {
+  p {
+    line-height: 1.75em;
+    max-width: 555px;
+  }
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  flex-flow: row nowrap;
+  position: relative;
+}
+.hero-action {
+  flex: 0 2;
+  padding: 1rem 1rem 1.5rem 1rem;
+  text-align: center;
+}
+.hero-action-link {
+  position: relative;
+  border: solid 1px var(--main-fg);
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  background-color: var(--main-bg);
+  border-color: var(--main-fg);
+
+  &:before {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: opacity 0.12s linear;
+    background-color: rgba(141, 135, 124, 0.5);
+  }
+  &:hover::before {
+    opacity: 50%;
+  }
+}
+.text-scroller {
+  display: none;
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .hero-heading-text {
+    padding: 15px 40px;
+  }
+  .hero-desc {
+    font-size: 1.8rem;
+  }
+  .hero-noun-list span {
+    display: block;
+    height: 2.5rem;
+    text-align: left;
+  }
+  .slide-up {
+    transform: translateY(-100%);
+    transition: transform 1s;
+    transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  }
+  .text-scroller {
+    display: flex;
+    flex-flow: row nowrap;
+    transform: translateX(8%);
+    background-color: var(--main-bg);
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-heading {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-heading {
+    font-size: 3rem;
+  }
+}
