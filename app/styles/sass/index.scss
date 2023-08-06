@@ -1,0 +1,275 @@
+@use "hero";
+@use "projectCard";
+@use "contact";
+@use "badge";
+
+:root {
+  // color scheme
+  --main-fg: rgb(20, 17, 22);
+  --main-bg-img: url("/assets/svg/dots.svg");
+  --main-bg: rgb(254, 255, 250);
+  --main-bg-alt: #ffffff;
+  --main-fg-alt: #777777;
+
+  --space-900: #2b2d42;
+  --space-700: #505370;
+  --space-500: #616796;
+  --space-100: #d1d5eb;
+  --space-50: #efecff;
+  --charcoal: #3d3d3d;
+
+  --primary: var(--charcoal);
+  --on-primary: var(--paper-color);
+  --primary-alt: var(--space-700);
+  --on-primary-alt: var(--main-bg);
+
+  --secondary: var(--space-500);
+  --secondary-alpha: #61679640;
+  --secondary-alt: var(--space-700);
+  --on-secondary: var(--main-bg);
+
+  --accent: rgb(92, 106, 124);
+  --accent-alt: rgb(219, 235, 255);
+  --on-accent: var(--charcoal);
+
+  --yellow-note: #ff9;
+  --green-note: #ccee9c;
+  --pink-note: #ffaed0;
+  --orange-note: #f1901d;
+  --note-fg-color: rgb(20, 17, 22);
+
+  --tape-width: 40px;
+  --tape-color: rgba(206, 206, 206, 0.2);
+  --paper-color: rgb(250, 247, 234);
+  --notepad-line: rgba(137, 163, 194, 0.9);
+}
+:root.dark-mode {
+  // color scheme
+  --main-bg: var(--charcoal);
+  --main-bg-img: url("/assets/img/chalkboard.png");
+  --main-fg: rgb(254, 255, 250);
+  --main-bg-alt: #fafaff;
+  --main-fg-alt: #777777;
+}
+
+@font-face {
+  font-family: "Figtree Static";
+  font-weight: 400;
+  src: url("/assets/Figtree/static/Figtree-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Figtree Static";
+  font-weight: 500;
+  src: url("/assets/Figtree/static/Figtree-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Figtree Static";
+  src: url("/assets/Figtree/static/Figtree-Bold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Figtree;
+  src: url("/assets/Figtree/Figtree-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 1 999;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1rem;
+  background-image: var(--main-bg-img);
+  background-color: var(--main-bg);
+  color: var(--main-fg);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  font-family: "Figtree Static", Arial, sans-serif;
+}
+@supports (font-variation-settings: "wght" 400) {
+  body {
+    font-family: Figtree, Arial, sans-serif;
+  }
+}
+code {
+  background-color: var(--accent-alt);
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+p {
+  line-height: 2;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+}
+.hero-caption-text {
+  background-color: transparent;
+  font-weight: normal;
+}
+.subheading-text.note.yellow {
+  font-size: 32px;
+  font-weight: 650;
+  height: auto;
+  width: auto;
+  padding: 30px 40px;
+  transform: rotate(-1deg);
+  &:before {
+    content: "";
+    position: absolute;
+    height: var(--tape-width);
+    width: 140px;
+    background-color: var(--tape-color);
+    transform: rotate(-3deg);
+    left: calc(50% - 70px);
+    top: calc(var(--tape-width) / -3 * 1.5);
+  }
+}
+.hero,
+.subsection-block {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.project-list {
+  padding: 20px 10px;
+  position: relative;
+  &:after {
+    content: "";
+    height: 115%;
+    min-width: 600px;
+    width: 100%;
+    position: absolute;
+    top: -8%;
+    left: 0;
+    background-image: linear-gradient(
+        90deg,
+        transparent 2px,
+        rgba(247, 160, 160, 0.6),
+        transparent 8px
+      ),
+      linear-gradient(0deg, var(--paper-color) 0% 100%),
+      linear-gradient(
+        0deg,
+        var(--paper-color) 0% 2%,
+        var(--notepad-line) 6% 10%,
+        var(--paper-color) 12% 100%
+      );
+    background-size: 8px, 100% 200px, 100% 25px;
+    background-position: 14% 0%, 0 0, 0 25px;
+    background-repeat: no-repeat, no-repeat, repeat-y;
+    z-index: -1;
+    transform: rotate(0.5deg);
+
+    @media (max-width: 992px) {
+      top: -4%;
+      left: -10%;
+      width: 120%;
+      background-size: 8px, 100% 135px, 100% 25px;
+    }
+    @media (max-width: 768px) {
+      left: -8%;
+      transform: rotate(0deg);
+      background-size: 8px, 100% 100px, 100% 25px;
+    }
+    @media (max-width: 576px) {
+      left: -10%;
+    }
+  }
+}
+.section-wrapper {
+  max-width: 100%;
+}
+.card-group {
+  column-gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 1rem 1.5rem 0rem 1.5rem;
+  padding: 0 0 3rem 0;
+  row-gap: 2rem;
+  width: 90%;
+}
+.note {
+  color: var(--note-fg-color);
+  width: 175px;
+  height: 175px;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 100%;
+    width: 100%;
+    height: 10px;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(177deg, rgba(0, 0, 0, 0.22) 10%, transparent 50%),
+      linear-gradient(-177deg, rgba(0, 0, 0, 0.22) 10%, transparent 50%);
+    background-size: 49% 100%;
+    background-position: 2% 0, 98% 0;
+  }
+  transform: rotate(5deg);
+  background-color: var(--orange-note);
+  box-shadow: 2px 3px 2px rgba(150, 147, 130, 0.2);
+  &.pink {
+    background-color: var(--pink-note);
+  }
+  &.yellow {
+    background-color: var(--yellow-note);
+  }
+  &.green {
+    background-color: var(--green-note);
+  }
+  &.orange {
+    background-color: var(--orange-note);
+  }
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  :root {
+    --tape-width: 60px;
+  }
+  .card-group {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .subheading-text.note.yellow {
+    font-size: 40px;
+  }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .card-group {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .section-wrapper {
+    max-width: 1200px;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
