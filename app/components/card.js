@@ -1,9 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 
-export default function Card({ data, className }) {
+export default function Card({ data, className, image }) {
   return (
     <div className={className}>
-      <img alt="" src={data.preview} className={data.imgClass || ""} />
+      <Image alt="" src={image} className={data.imgClass || ""} />
       <div className="content">
         <h3 className="title">{data.title}</h3>
         <div className="desc">
