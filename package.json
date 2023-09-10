@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "serve out",
     "sass": "sass --watch app/styles/sass:app/styles/css",
     "lint": "next lint"
   },
@@ -14,9 +14,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "remark": "^14.0.2",
-    "remark-html": "^15.0.1"
+    "remark-html": "^15.0.1",
+    "sharp": "^0.32.5"
   },
   "devDependencies": {
+    "serve": "^14.2.1",
     "eslint": "^8.38.0",
     "eslint-config-next": "13.4.12",
     "sass": "^1.63.6",
